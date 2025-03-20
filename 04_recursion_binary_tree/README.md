@@ -8,7 +8,7 @@ While everything can be solved purely through pattern matching, there are some c
 
 ## Useful Reading
 
-- Cond: [docs](https://hexdocs.pm/elixir/1.17.0/Kernel.SpecialForms.html#cond/1)
+- Cond: [docs](https://hexdocs.pm/elixir/1.18.0/Kernel.SpecialForms.html#cond/1)
 
 ## Exercise
 

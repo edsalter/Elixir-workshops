@@ -6,8 +6,8 @@ It relies on using the `IO.put` to print the prime numbers in the test
 
 ## Useful Reading
 
-- Process spawn: [docs](https://hexdocs.pm/elixir/1.17.0/Kernel.html#spawn/1)
-- Receive Process message: [docs](https://hexdocs.pm/elixir/1.17.0/Kernel.SpecialForms.html#receive/1)
+- Process spawn: [docs](https://hexdocs.pm/elixir/1.18.0/Kernel.html#spawn/1)
+- Receive Process message: [docs](https://hexdocs.pm/elixir/1.18.0/Kernel.SpecialForms.html#receive/1)
 
 ## Exercise
 
