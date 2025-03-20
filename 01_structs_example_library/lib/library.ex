@@ -1,4 +1,6 @@
 defmodule Library do
+  alias Author
+  alias Book
   @doc """
   Creates a new author.
 
@@ -13,7 +15,9 @@ defmodule Library do
       iex> create_author("Jane Austen", 1775)
       %Author{name: "Jane Austen", birth_year: 1775}
   """
+  @spec create_author(String.t(), integer()) :: Author.t()
   def create_author(name, birth_year) do
+    %Author{name: name, birth_year: birth_year}
   end
 
   @doc """
@@ -28,11 +32,13 @@ defmodule Library do
   - `%Book{}`: A new Book struct with the given title, author, and published year.
 
   ## Example
-      iex> author = create_author("Jane Austen", 1775)
-      iex> create_book("Pride and Prejudice", author, 1813)
+      iex> author = Library.create_author("Jane Austen", 1775)
+      iex> Library.create_book("Pride and Prejudice", author, 1813)
       %Book{title: "Pride and Prejudice", author: %Author{name: "Jane Austen", birth_year: 1775}, published_year: 1813}
   """
+  @spec create_book(String.t(), Author.t(), integer()) :: Book.t()
   def create_book(title, author, published_year) do
+    %Book{title: title, author: author, published_year: published_year}
   end
 
   @doc """
@@ -50,7 +56,9 @@ defmodule Library do
       iex> update_published_year(book, 1815)
       %Book{title: "Pride and Prejudice", author: %Author{name: "Jane Austen", birth_year: 1775}, published_year: 1815}
   """
+  @spec update_published_year(Book.t(), integer()) :: Book.t()
   def update_published_year(book, published_year) do
+    %Book{book | published_year: published_year}
   end
 
   @doc """
@@ -70,6 +78,11 @@ defmodule Library do
       iex> list_books(books)
       ["Pride and Prejudice by Jane Austen, published in 1813", "Moby Dick by Herman Melville, published in 1851"]
   """
+  @spec list_books([Book.t()]) :: [String.t()]
   def list_books(books) do
+    require IEx; IEx.pry()
+    Enum.map(books, fn book ->
+      "#{book.title} by #{book.author.name}, published in #{book.published_year}"
+    end)
   end
 end
